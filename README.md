@@ -1,24 +1,42 @@
-# TimCore
-TimCore分为 core,TimJpush ,TimShare 
-
-
-<h1>Timcore</h1>
-<li>Timcore 为其他的 module 需要的基本支持部分 </li>
-
+# HTTopView
+HTTopView 使用 block 使用 HTHorizontalSelectionList 
  
-<h1>TimShare</h1>
-<ul>
-<li>简化分享的代码逻辑,这个使用的 sharesdk 作为拓展,只需要设置3方 sdk 的 key 和 一个 收到mob的 block 即可</li>
-<li>因为 qq 的 sdk导致 pod lib lint 不通过,</li>
 
 ````objectivec
-typedef void(^ShareResult)(BOOL sucess,NSString *msg);
 
-@interface   AppDelegate(share)
+@implementation ViewController
 
--(void)initSharedSDK;
+- (void)viewDidLoad {
+[super viewDidLoad];
+// Do any additional setup after loading the view, typically from a nib.
 
--(void)shareInfo:(NSString *)title content:(NSString *)content image:(id)image  url:(NSString *)url actionSheet:(UIView *)actionSheet onShareStateChanged:(ShareResult)shareStateChangedHandler;
+self.topView = [[HTTopView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+self.topView.mainColor = [UIColor redColor];
+[self.view addSubview:self.topView];
+
+
+
+static NSArray *titles;
+titles = @[@"AA",@"bb" ];
+
+self.topView.topViewNumberBlock = ^NSInteger(HTTopView *view ){
+return titles.count;
+};
+
+self.topView.topViewTitleBlock = ^NSString *(HTTopView *view,NSInteger index ){
+return [titles objectAtIndex:index];
+};
+
+
+
+self.topView.topViewselectTopItemBlock = ^void(HTTopView * topView ,NSInteger index ) {
+
+NSLog(@"%ld",index);
+
+};
+
+
+}
 
 
 @end

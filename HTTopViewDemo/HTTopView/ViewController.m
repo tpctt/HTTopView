@@ -27,7 +27,7 @@
     
     
     static NSArray *titles;
-    titles = @[@"趣图展业",@"热文展业" ];
+    titles = @[@"AA",@"bb" ];
     
     self.topView.topViewNumberBlock = ^NSInteger(HTTopView *view ){
         return titles.count;
