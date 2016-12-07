@@ -1,0 +1,15 @@
+PODS:
+  - HTHorizontalSelectionList (0.7.4):
+    - M13BadgeView (~> 1.0.4)
+  - M13BadgeView (1.0.4)
+
+DEPENDENCIES:
+  - HTHorizontalSelectionList
+
+SPEC CHECKSUMS:
+  HTHorizontalSelectionList: c38792f4bc87f941ab6c07b02a40abf111c68249
+  M13BadgeView: 700dd0714fdc837c0cf1c8c004454963ec22441f
+
+PODFILE CHECKSUM: 96387f32a3db7aa27cfd1477716bbfb0da0d398d
+
+COCOAPODS: 1.1.1
